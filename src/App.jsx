@@ -1,9 +1,15 @@
 import React from "react";
+import GameContainer from "./containers/GameContainer.jsx";
 
 const App = () => {
 
     return (
-        <h1>Testing</h1>
+        <>
+            <header>
+                <h1>Blackjack!</h1>
+            </header>
+            <GameContainer/>
+        </>
     )
 
 }
