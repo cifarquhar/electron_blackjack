@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 
 const Hand = ({playerName, cards}) => {
 
@@ -12,10 +13,14 @@ const Hand = ({playerName, cards}) => {
         return accumulator + parseInt(card.rank);
     }, 0);
 
+    const cardNodes = cards.map((card, index) => {
+        return <Card card={card} key={index}/>
+    });
+
     return(
         <section>
             <h2>{playerName}</h2>
-            <p>Cards go here</p>
+            {cardNodes}
             <p>Total: {score}</p>
         </section>
     )
