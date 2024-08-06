@@ -52,12 +52,32 @@ const GameContainer = () => {
 
     }
 
+    const calculateScore = (cards) => {
+        return cards.reduce((accumulator, card) => {
+            if (card.rank === "A") {
+                return accumulator + 1;
+            }
+            if (["J", "Q", "K"].includes(card.rank)) {
+                return accumulator + 10;
+            }
+            return accumulator + parseInt(card.rank);
+        }, 0);
+    }
+
     useEffect( startGame, []);
 
     return(
         <main>
-            <Hand playerName={"Dealer"} cards={dealerHand}/>
-            <Hand playerName={"Player"} cards={playerHand}/>
+            <Hand 
+                playerName={"Dealer"} 
+                cards={dealerHand} 
+                score={calculateScore(dealerHand)}
+            />
+            <Hand 
+                playerName={"Player"} 
+                cards={playerHand}
+                score={calculateScore(playerHand)}
+            />
         </main>
     )
 
