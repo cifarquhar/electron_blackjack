@@ -22,11 +22,36 @@ const GameContainer = () => {
             const j = Math.floor(Math.random() * (i + 1));
             [cards[i], cards[j]] = [cards[j], cards[i]];
         }
-        
-        setDeck(cards);
+
+        return cards;
     }
 
-    useEffect(generateDeck, []);
+    const startGame = () => {
+        const cards = generateDeck();
+        setDealerHand(cards.splice(0,2));
+        setPlayerHand(cards.splice(0,2));
+        setDeck(cards)
+    }
+
+    const dealCard = (target) => {
+
+        const updatedDeck = [...deck];
+        const nextCard = updatedDeck.pop();
+
+        if (target === "dealer") {
+            const updatedDealerHand = [...dealerHand, nextCard];
+            setDealerHand(updatedDealerHand);
+            setDeck(updatedDeck);
+            return
+        }
+
+        const updatedPlayerHand = [...playerHand, nextCard];
+        setPlayerHand(updatedPlayerHand);
+        setDeck(updatedDeck);
+
+    }
+
+    useEffect( startGame, []);
 
     return(
         <main>
