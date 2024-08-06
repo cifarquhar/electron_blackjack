@@ -15,8 +15,6 @@ const GameContainer = () => {
                 cards.push({suit, rank});
             });
         });
-
-        console.log(cards);
         
         setDeck(cards);
     }
