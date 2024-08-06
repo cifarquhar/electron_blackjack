@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Hand from "../components/Hand";
 
 const GameContainer = () => {
 
@@ -55,7 +56,8 @@ const GameContainer = () => {
 
     return(
         <main>
-            <p>stuff goes here</p>
+            <Hand playerName={"Dealer"} cards={dealerHand}/>
+            <Hand playerName={"Player"} cards={playerHand}/>
         </main>
     )
 
