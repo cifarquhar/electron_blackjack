@@ -64,6 +64,10 @@ const GameContainer = () => {
         }, 0);
     }
 
+    const handleHitClick = async () => {
+        dealCard("player");
+    }
+
     useEffect( startGame, []);
 
     return(
@@ -78,6 +82,7 @@ const GameContainer = () => {
                 cards={playerHand}
                 score={calculateScore(playerHand)}
             />
+            <button onClick={handleHitClick}>Hit</button>
         </main>
     )
 
