@@ -26,7 +26,7 @@ const createWindow = () => {
 
 const reactDevToolsPath = path.join(
   os.homedir(),
-  '/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/5.3.1_0'
+  '/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/6.0.1_0'
 );
 
 // This method will be called when Electron has finished
